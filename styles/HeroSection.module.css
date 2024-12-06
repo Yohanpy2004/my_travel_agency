@@ -1,100 +1,96 @@
-/* styles/HeroSection.module.css */
-
+/* Conteneur principal */
 .heroSection {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem 2rem;
-    background-color: #f0f4f8;
-    text-align: center;
-  }
-  
-  .heroContent {
-    max-width: 800px;
-    padding: 1.5rem;
-  }
-  
+  position: relative;
+  overflow: hidden;
+  height: 85vh;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Slider container */
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Slide style */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slideMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texte de contenu de la hero section */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.getStartedButton {
+  padding: 0.8rem 2rem;
+  background-color: #ffffff;
+  color: #1A73E8;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.getStartedButton:hover {
+  background-color: #1A73E8;
+  color: white;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
   .title {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #1A73E8;
-    margin-bottom: 1rem;
+    font-size: 2rem;
   }
-  
+
   .subtitle {
-    font-size: 1.25rem;
-    color: #333;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
   }
-  
-  .getStartedButton {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: #1A73E8;
-    color: white;
-    border-radius: 30px;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
     font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
   }
-  
-  .getStartedButton:hover {
-    background-color: #3A89F5;
-  }
-  
-  /* Responsiveness */
-  
-  /* Large screens */
-  @media (min-width: 1024px) {
-    .title {
-      font-size: 4rem;
-    }
-  
-    .subtitle {
-      font-size: 1.5rem;
-    }
-  }
-  
-  /* Tablets */
-  @media (max-width: 1024px) and (min-width: 768px) {
-    .heroSection {
-      padding: 3rem 1.5rem;
-    }
-  
-    .title {
-      font-size: 2.5rem;
-    }
-  
-    .subtitle {
-      font-size: 1.2rem;
-    }
-  
-    .getStartedButton {
-      padding: 0.7rem 1.2rem;
-      font-size: 0.9rem;
-    }
-  }
-  
-  /* Phones */
-  @media (max-width: 768px) {
-    .heroSection {
-      padding: 2rem 1rem;
-    }
-  
-    .title {
-      font-size: 2rem;
-    }
-  
-    .subtitle {
-      font-size: 1rem;
-    }
-  
-    .getStartedButton {
-      padding: 0.6rem 1rem;
-      font-size: 0.8rem;
-      width: 100%;
-      border-radius: 25px;
-    }
-  }
-  
+}

@@ -1,10 +1,15 @@
-// app/super-admin/page.tsx
-export default function SuperAdminPage() {
-    return (
-      <div>
-        <h1>Bienvenue sur la page Super Admin</h1>
-        <p>Vous avez accédé au tableau de bord du Super Admin.</p>
-      </div>
-    );
-  }
-  
+// app/pages/dashboard/index.tsx
+"use client"
+import React from 'react';
+import DashboardLayout from '../components/DashboardLayout';
+
+const DashboardHome = () => {
+  return (
+    <DashboardLayout>
+      <h2>Bienvenue sur le Dashboard !</h2>
+      {/* Ajouter ici les composants ou contenus de la page d'accueil */}
+    </DashboardLayout>
+  );
+};
+
+export default DashboardHome;
